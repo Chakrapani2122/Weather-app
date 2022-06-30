@@ -20,7 +20,7 @@ try:
         cordinates = g.latlng
         global geo_position
         geo_position = cordinates
-        api_key = "8a7a7bedb7f79d4e68c2405b11725a61"
+        api_key = "Your API Key"
         lat = cordinates[0]
         lon = cordinates[1]
         url1 = "https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&appid=%s&units=metric" % (lat, lon, api_key)
@@ -31,35 +31,35 @@ try:
 
     def update_temperature():
         temperature_data.config(text=str(data1["current"]["temp"]) + " C")
-        temperature_data.after(100,update_temperature)
+        temperature_data.after(1000,update_temperature)
 
     def update_humidity():
         humidity_data.config(text=data1["current"]["humidity"])
-        humidity_data.after(100,update_humidity)
+        humidity_data.after(1000,update_humidity)
 
     def update_wind_speed():
         wind_speed_data.config(text=data1["current"]["wind_speed"])
-        wind_speed_data.after(100,update_wind_speed)
+        wind_speed_data.after(1000,update_wind_speed)
 
     def update_weather_desc():
         weather_desc_data.config(text=data1["current"]["weather"][0]["main"].title())
-        weather_desc_data.after(100,update_weather_desc)
+        weather_desc_data.after(1000,update_weather_desc)
 
     def update_time_zone():
         time_zone_data.config(text=data1["timezone"])
-        time_zone_data.after(100,update_time_zone)
+        time_zone_data.after(1000,update_time_zone)
 
     def update_feelslike():
         feelslike_data.config(text=data1["current"]["feels_like"])
-        feelslike_data.after(100,update_feelslike)
+        feelslike_data.after(1000,update_feelslike)
 
     def update_pressure():
         pressure_data.config(text=data1["current"]["pressure"])
-        pressure_data.after(100,update_pressure)
+        pressure_data.after(1000,update_pressure)
 
     def update_uvi():
         uvi_data.config(text=data1["current"]["uvi"])
-        uvi_data.after(100,update_uvi)
+        uvi_data.after(1000,update_uvi)
 
     def update_clock():
         hours=time.strftime("%I")
